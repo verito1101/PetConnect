@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PetConnect: plataforma para facilitar la adopción responsable de mascotas.">
+  <meta name="theme-color" content="#f2622b">
+  <title>PetConnect | Adopción responsable de mascotas</title>
+  <!-- Tipografías (si no hay internet se usan las del sistema) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- ============ NAVEGACIÓN ============ -->
+  <header class="header">
+    <nav class="nav contenedor" aria-label="Navegación principal">
+      <a href="#inicio" class="logo">PetConnect</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#mascotas">Mascotas</a></li>
+        <li><a href="#match">Test Match</a></li>
+        <li><a href="#herramientas">Herramientas</a></li>
+        <li><a href="#faq">Preguntas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><button class="btn-icono" id="btnTema" aria-label="Cambiar tema">🌙</button></li>
+        <li><a href="#mascotas" class="chip-fav" id="contadorFav">❤ <span id="favCount">0</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ VISTA: INICIO ============ -->
+    <div class="vista" id="inicio">
+
+      <!-- HERO -->
+      <section class="hero">
+        <div class="contenedor hero-grid">
+          <div>
+            <p class="etiqueta">Adopción responsable</p>
+            <h1>Encuentra a quien está <span class="resaltado">hecho para tu hogar</span></h1>
+            <p class="hero-texto">En PetConnect no solo te mostramos mascotas: te ayudamos a descubrir cuál es
+              compatible
+              contigo,
+              cuánto cuesta realmente cuidarla y si estás listo para dar el paso.</p>
+            <div class="hero-botones">
+              <a href="#match" class="btn btn-primario">Hacer el test Match</a>
+              <a href="#mascotas" class="btn btn-secundario">Ver mascotas</a>
+            </div>
+            <ul class="hero-puntos">
+              <li>Test de compatibilidad</li>
+              <li>Costos claros</li>
+              <li>Proceso simple</li>
+            </ul>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-foto" id="heroSlider" role="img" aria-label="Fotos de mascotas que esperan un hogar">
+              <img class="slide activa" src="img/1.jpeg" alt="">
+              <img class="slide" src="img/2.jpeg" alt="">
+              <img class="slide" src="img/3.jpeg" alt="">
+              <img class="slide" src="img/4.jpeg" alt="">
+              <img class="slide" src="img/5.jpeg" alt="">
+              <img class="slide" src="img/6.jpeg" alt="">
+              <img class="slide" src="img/7.jpeg" alt="">
+              <img class="slide" src="img/8.jpeg" alt="">
+              <img class="slide" src="img/9.jpeg" alt="">
+            </div>
+            <svg class="ola" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,90 1440,40 L1440,80 L0,80 Z" fill="currentColor" />
+            </svg>
+      </section>
+
+      <!-- CONTADORES DE IMPACTO -->
+      <section class="impacto contenedor" aria-label="Impacto">
+        <div class="impacto-item"><strong data-meta="6">0</strong><span>mascotas esperando hogar</span></div>
+        <div class="impacto-item"><strong data-meta="4">0</strong><span>millones de perros y gatos sin supervisión en
+            Chile (est. 2022)</span></div>
+        <div class="impacto-item"><strong data-meta="27">0</strong><span>% de las mascotas tiene microchip</span></div>
+      </section>
+
+      <!-- SELLO VALÓRICO -->
+      <section class="contenedor seccion" id="por-que">
+        <h2>Adoptar es un compromiso de amor</h2>
+        <p class="subtitulo">Una adopción responsable cambia la vida de la mascota y la tuya.</p>
+        <div class="beneficios">
+          <article class="beneficio"><span class="icono">🏠</span>
+            <h3>Un hogar para siempre</h3>
+            <p>Cada adopción libera un espacio para rescatar a otra mascota.</p>
+          </article>
+          <article class="beneficio"><span class="icono">💉</span>
+            <h3>Salud al día</h3>
+            <p>Vacunas, desparasitación y esterilización son parte del compromiso.</p>
+          </article>
+          <article class="beneficio"><span class="icono">🤝</span>
+            <h3>Compatibilidad real</h3>
+            <p>Una buena elección evita abandonos y asegura una relación feliz.</p>
+          </article>
+          <article class="beneficio"><span class="icono">🐾</span>
+            <h3>Adopta, no compres</h3>
+            <p>Cada animal comprado ocupa un lugar que podría tener uno rescatado. Adoptar le da una segunda oportunidad
+              a quien ya está esperando.</p>
+          </article>
+          <article class="beneficio"><span class="icono">✂️</span>
+            <h3>Esterilizar es cuidar</h3>
+            <p>Evita camadas no planificadas, que son una de las causas de la sobrepoblación y el abandono, y previene
+              problemas de salud.</p>
+          </article>
+          <article class="beneficio"><span class="icono">🩺</span>
+            <h3>Cuidado todos los días</h3>
+            <p>Alimentación adecuada, paseo y juego, y control veterinario. En Chile solo cerca del 65% de las mascotas
+              va al veterinario al menos una vez al año.</p>
+          </article>
+          <article class="beneficio"><span class="icono">📊</span>
+            <h3>La realidad del abandono</h3>
+            <p>Un estudio de la UC y el programa Mascota Protegida (Subdere, 2022) estima unos 4 millones de perros y
+              gatos sin supervisión en Chile: 3,46 millones de perros y 588 mil gatos.</p>
+          </article>
+          <article class="beneficio"><span class="icono">🔖</span>
+            <h3>Registro y microchip</h3>
+            <p>La Ley 21.020 de tenencia responsable exige registrar y microchipear a perros y gatos. Aun así, solo el
+              27,4% de las mascotas tiene microchip.</p>
+          </article>
+        </div>
+        <p class="nota" style="text-align:center">Fuente de las cifras: Estudio de población animal, Facultad de
+          Medicina Veterinaria UC y Programa Mascota Protegida (Subdere), 2022. Son estimaciones.</p>
+      </section>
+
+      <!-- MITOS Y VERDADES -->
+      <section class="seccion fondo-suave" id="mitos">
+        <div class="contenedor">
+          <h2>Mitos y verdades de la adopción</h2>
+          <p class="subtitulo">¿Cuánto sabes realmente? Responde y descubre qué creencias conviene cuestionar.</p>
+          <div class="tarjeta mitos-caja" id="mitosContenido" aria-live="polite"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============ VISTA: PROCESO ============ -->
+    <section class="vista contenedor seccion" id="proceso">
+      <h2>Proceso de adopción</h2>
+      <p class="subtitulo">Seis pasos para una adopción informada y responsable.</p>
+
+      <div class="proceso-cols">
+        <article class="tarjeta proceso-card">
+          <h3>🔎 Antes de postular</h3>
+          <p class="proceso-sub">Tú conoces, comparas y te preparas.</p>
+          <ol class="proceso-lista">
+            <li>
+              <span class="num">1</span>
+              <div>
+                <h4>Conoce a las mascotas</h4>
+                <p>Entra a "Mascotas", usa los filtros por especie y edad o busca por nombre, y abre la ficha de las que
+                  te llamen la atención.</p>
+              </div>
+            </li>
+            <li>
+              <span class="num">2</span>
+              <div>
+                <h4>Revisa si son compatibles</h4>
+                <p>Haz el Test Match, calcula el costo mensual en "Herramientas" y completa el checklist para saber si
+                  estás listo.</p>
+              </div>
+            </li>
+            <li>
+              <span class="num">3</span>
+              <div>
+                <h4>Envía tu solicitud</h4>
+                <p>Aprieta "Adoptar" en la mascota elegida y completa nombre, correo y un mensaje contándonos sobre tu
+                  hogar y tu rutina.</p>
+              </div>
+            </li>
+          </ol>
+        </article>
+
+        <article class="tarjeta proceso-card">
+          <h3>🤝 Después de postular</h3>
+          <p class="proceso-sub">Nosotros revisamos y coordinamos contigo.</p>
+          <ol class="proceso-lista">
+            <li>
+              <span class="num">4</span>
+              <div>
+                <h4>Revisamos tu solicitud</h4>
+                <p>El voluntariado revisa tu solicitud y te escribe para conocerte mejor. Enviar el formulario no
+                  significa que la adopción esté aprobada.</p>
+              </div>
+            </li>
+            <li>
+              <span class="num">5</span>
+              <div>
+                <h4>Entrevista y encuentro</h4>
+                <p>Conversamos sobre tu hogar y coordinamos un encuentro con la mascota para ver cómo se llevan.</p>
+              </div>
+            </li>
+            <li>
+              <span class="num">6</span>
+              <div>
+                <h4>Compromiso y seguimiento</h4>
+                <p>Si todo calza, firmas un compromiso de tenencia responsable (vacunas, esterilización, registro y
+                  microchip) y hacemos seguimiento los primeros meses.</p>
+              </div>
+            </li>
+          </ol>
+        </article>
+      </div>
+
+
+      <div class="centrado"><a href="#mascotas" class="btn btn-primario">Ver mascotas</a></div>
+    </section>
+
+    <!-- ============ VISTA: MASCOTAS ============ -->
+    <section class="vista contenedor seccion" id="mascotas">
+      <h2>Mascotas que buscan hogar</h2>
+      <p class="subtitulo">Filtra, guarda tus favoritas ❤️ y conoce la historia de cada una.</p>
+      <!-- Perfil del adoptante: lo llena el test Match y lo usa todo el sitio -->
+      <div id="bannerPerfil" aria-live="polite"></div>
+      <div class="filtros">
+        <input type="search" id="buscador" placeholder="Buscar por nombre..." aria-label="Buscar mascota">
+        <select id="filtroEspecie" aria-label="Filtrar por especie">
+          <option value="">Todas las especies</option>
+          <option value="perro">Perros</option>
+          <option value="gato">Gatos</option>
+        </select>
+        <select id="filtroEdad" aria-label="Filtrar por edad">
+          <option value="">Todas las edades</option>
+          <option value="3-8">3 a 8 meses</option>
+          <option value="12-36">1 a 3 años</option>
+          <option value="36-999">3 a 5+ años</option>
+        </select>
+        <select id="filtroTamano" aria-label="Filtrar por tamaño">
+          <option value="">Todos los tamaños</option>
+          <option value="pequeno">Pequeño</option>
+          <option value="mediano">Mediano</option>
+          <option value="grande">Grande</option>
+        </select>
+        <select id="ordenar" aria-label="Ordenar mascotas">
+          <option value="">Orden: destacadas</option>
+          <option value="compat" id="optCompat" disabled>Mayor compatibilidad conmigo</option>
+        </select>
+        <label class="check-inline"><input type="checkbox" id="soloFavoritos"> Solo favoritos</label>
+      </div>
+      <p class="resultados" id="resultadosInfo" aria-live="polite"></p>
+      <div class="grid-mascotas" id="gridMascotas"></div>
+    </section>
+
+    <!-- ============ VISTA: TEST MATCH ============ -->
+    <section class="vista seccion" id="match">
+      <div class="contenedor">
+        <h2>Test Match: ¿qué mascota va contigo?</h2>
+        <p class="subtitulo">Responde 5 preguntas y calculamos tu compatibilidad con cada mascota.</p>
+        <form id="formMatch" class="tarjeta"></form>
+        <div id="resultadoMatch" class="resultado-match" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ============ VISTA: HERRAMIENTAS ============ -->
+    <section class="vista seccion fondo-suave" id="herramientas">
+      <div class="contenedor">
+        <h2>Herramientas para decidir mejor</h2>
+        <p class="subtitulo">Calcula cuánto cuesta cuidarla y revisa si estás preparado.</p>
+
+        <!-- Tu ruta hacia la adopción (la dibuja JavaScript) -->
+        <div class="tarjeta ruta" id="rutaAdopcion" aria-live="polite"></div>
+
+        <div class="dos-col">
+          <!-- Calculadora -->
+          <div class="tarjeta" id="calculadora">
+            <h3>💰 Calculadora de costo real</h3>
+            <label for="calcMascota">Mascota (opcional)</label>
+            <select id="calcMascota"></select>
+            <label for="calcEspecie">Especie</label>
+            <select id="calcEspecie">
+              <option value="perro">Perro</option>
+              <option value="gato">Gato</option>
+            </select>
+            <label for="calcTamano">Tamaño</label>
+            <select id="calcTamano">
+              <option value="pequeno">Pequeño</option>
+              <option value="mediano">Mediano</option>
+              <option value="grande">Grande</option>
+            </select>
+            <div id="calcResultado" class="calc-resultado" aria-live="polite"></div>
+          </div>
+
+          <!-- Checklist -->
+          <div class="tarjeta" id="checklist">
+            <h3>✅ ¿Estoy listo para adoptar?</h3>
+            <div class="barra">
+              <div class="barra-relleno" id="barraProgreso"></div>
+            </div>
+            <p id="textoProgreso" class="progreso-texto" aria-live="polite"></p>
+            <ul class="lista-check" id="listaCheck"></ul>
+            <div id="checkAcciones" aria-live="polite"></div>
+          </div>
+        </div>
+        <!-- Checklist -->
+        <div class="tarjeta" id="checklist">
+          <h3>✅ ¿Estoy listo para adoptar?</h3>
+          <div class="barra">
+            <div class="barra-relleno" id="barraProgreso"></div>
+          </div>
+          <p id="textoProgreso" class="progreso-texto" aria-live="polite"></p>
+          <ul class="lista-check" id="listaCheck"></ul>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <!-- ============ VISTA: PREGUNTAS FRECUENTES ============ -->
+    <section class="vista contenedor seccion" id="faq" hidden>
+      <h2>Preguntas frecuentes</h2>
+      <p class="subtitulo">Resolvemos las dudas más comunes antes de adoptar.</p>
+      <div class="faq">
+        <details>
+          <summary>¿Enviar el formulario significa que ya adopté?</summary>
+          <p>No. El formulario es una solicitud de contacto. El voluntariado revisa cada caso y se comunica contigo para
+            los siguientes pasos.</p>
+        </details>
+        <details>
+          <summary>¿Quiénes pueden adoptar?</summary>
+          <p>Personas mayores de edad, con una vivienda que permita mascotas y con el acuerdo de todos en el hogar. Lo
+            importante es poder darle tiempo, cuidados y cariño por muchos años.</p>
+        </details>
+        <details>
+          <summary>¿Puedo adoptar si vivo en departamento?</summary>
+          <p>Sí, depende de la mascota. Milo, por ejemplo, está adaptado a la vida de interior. El Test Match te muestra
+            cuáles calzan mejor con tu espacio y tu tiempo.</p>
+        </details>
+        <details>
+          <summary>¿Qué pasa si tengo niños u otras mascotas?</summary>
+          <p>Cuéntanoslo en el formulario y en la entrevista. Cada ficha indica si la mascota se lleva bien con niños y
+            la conversación sirve para evaluar la convivencia.</p>
+        </details>
+        <details>
+          <summary>¿Las mascotas están esterilizadas y vacunadas?</summary>
+          <p>El detalle de cada una se conversa en la entrevista. Quien adopta se compromete a mantener vacunas y
+            control veterinario al día y a esterilizar si aún no lo está.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto cuesta mantener una mascota?</summary>
+          <p>Depende de la especie y el tamaño. Usa la calculadora de costos en "Herramientas" para una estimación
+            mensual y anual.</p>
+        </details>
+        <details>
+          <summary>¿Qué hago si no puedo seguir cuidándola?</summary>
+          <p>Escríbenos antes de tomar cualquier decisión. Abandonar nunca es una opción: te ayudamos a buscar una
+            familia responsable.</p>
+        </details>
+        <details>
+          <summary>¿Cómo me contacto con PetConnect?</summary>
+          <p>Por correo, Instagram o WhatsApp. Los datos están en la sección <a href="#contacto">Contacto</a>.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============ VISTA: CONTACTO ============ -->
+    <section class="vista contenedor seccion" id="contacto" hidden>
+      <h2>Contacto</h2>
+      <p class="subtitulo">¿Dudas o quieres avanzar con una solicitud? Escríbenos.</p>
+      <div class="contacto-grid">
+        <article class="tarjeta contacto-item"><span class="icono">✉️</span>
+          <h3>Correo</h3>
+          <p>adopciones@petconnect.cl</p>
+        </article>
+        <article class="tarjeta contacto-item"><span class="icono">📸</span>
+          <h3>Instagram</h3>
+          <p>@petconnect.cl</p>
+        </article>
+        <article class="tarjeta contacto-item"><span class="icono">💬</span>
+          <h3>WhatsApp</h3>
+          <p>+56 9 5555 3402</p>
+        </article>
+        <article class="tarjeta contacto-item"><span class="icono">📍</span>
+          <h3>Punto de encuentro</h3>
+          <p>IP Santo Tomás, sede San Joaquín<br>Av. Vicuña Mackenna 4835</p>
+        </article>
+      </div>
+      <div class="mapa">
+        <iframe title="Mapa de IP Santo Tomás sede San Joaquín" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Vicu%C3%B1a+Mackenna+4835,+San+Joaqu%C3%ADn,+Chile&output=embed"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor">
+      <a href="#inicio" class="logo">
+        <span>PetConnect</span>
+      </a>
+      <p>Conectamos mascotas con hogares responsables.</p>
+      <ul class="footer-links">
+        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#mascotas">Mascotas</a></li>
+        <li><a href="#match">Test Match</a></li>
+        <li><a href="#herramientas">Herramientas</a></li>
+        <li><a href="#faq">Preguntas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <p class="mini">Desafío Web 2026 · IP Santo Tomás, Sede San Joaquín</p>
+      <p class="mini">Equipo: Veronica Ovalle, Sheriet Ramos, Reinaldo Danna</p>
+    </div>
+  </footer>
+
+  <!-- Modal ficha de mascota -->
+  <div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+    <div class="modal-caja">
+      <button class="modal-cerrar" id="modalCerrar" aria-label="Cerrar">✕</button>
+      <div id="modalContenido"></div>
+    </div>
+  </div>
+
+  <!-- Modal formulario de adopción -->
+  <div class="modal" id="modalAdopcion" hidden role="dialog" aria-modal="true" aria-labelledby="tituloAdopcion">
+    <div class="modal-caja modal-ancho">
+      <button class="modal-cerrar" id="modalAdopcionCerrar" aria-label="Cerrar">✕</button>
+      <div class="modal-cuerpo">
+        <h3 id="tituloAdopcion">Solicitud de adopción</h3>
+        <p class="subtitulo" id="subtituloAdopcion"></p>
+        <form id="formAdopcion" class="tarjeta formulario" novalidate>
+          <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+            <small class="error" id="errNombre"></small>
+          </div>
+          <div class="campo">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" autocomplete="email" required>
+            <small class="error" id="errCorreo"></small>
+          </div>
+          <div class="campo">
+            <label for="mascotaInteres">Mascota de interés</label>
+            <select id="mascotaInteres" name="mascotaInteres" required></select>
+            <small class="error" id="errMascota"></small>
+          </div>
+          <div class="campo">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" maxlength="400" required
+              placeholder="Cuéntanos por qué quieres adoptar..."></textarea>
+            <button type="button" class="btn btn-secundario btn-chico" id="btnGenerarMensaje">✨ Generar mi mensaje con
+              mi perfil</button>
+            <small class="contador" id="contadorMensaje">0 / 400</small>
+            <small class="error" id="errMensaje"></small>
+          </div>
+          <button type="submit" class="btn btn-primario">Enviar solicitud</button>
+        </form>
+        <div id="confirmacion" class="confirmacion" hidden role="status"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
